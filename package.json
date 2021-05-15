@@ -1,0 +1,17 @@
+{
+  "name": "reddit-vid-dl",
+  "version": "1.0.0",
+  "description": "Download reddit video by cli or use the api",
+  "main": "core.js",
+  "bin": {
+    "reddit-dl": "./bin/cli/index.js"
+  },
+  "author": "Guuzzeji",
+  "license": "MIT",
+  "dependencies": {
+    "@ffmpeg/core": "^0.8.5",
+    "@ffmpeg/ffmpeg": "^0.9.7",
+    "node-fetch": "^2.6.1",
+    "yargs": "^16.2.0"
+  }
+}

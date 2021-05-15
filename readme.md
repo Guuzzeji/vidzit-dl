@@ -1,6 +1,6 @@
-<center>
+<p align="center">
 <img src="./reddit-readme.gif"></img>
-</center>
+</p>
 <br>
 
 # Reddit-vid-dl  & Reddit-dl Cli
@@ -9,7 +9,6 @@
 
 > NOTE: Video can't be embedded (No Youtube links, No Vimeo, etc).
 
-</br>
 </br>
 
 # CLI Tool
@@ -23,7 +22,7 @@
 reddit-dl https://www.reddit.com/r/dankvideos/comments/mxc6eb/korone_meme/
 ```
 
-## Cli-Option
+### Cli-Option
 - **`--audio or -a`**
   - Download only audio 
 - **`--frames or -f`** 
@@ -32,7 +31,7 @@ reddit-dl https://www.reddit.com/r/dankvideos/comments/mxc6eb/korone_meme/
   -  Return json file of audio and video urls
 - **`--help or help`** 
   -  Return list of commands to use
-</br>
+
 </br>
 
 # API
@@ -43,7 +42,7 @@ reddit-dl https://www.reddit.com/r/dankvideos/comments/mxc6eb/korone_meme/
   - (Parameter-1) Pass in the json video and audio url from fetchUrls
   - (Parameter-2) Pass in either 'frames'-(video no audio), 'audio-(only audio), null-(video and audio)
   - Return either a stream or Uint8Array if you download both video and audio  
-</br>
+
 </br>
 
 # Example Code
@@ -78,6 +77,6 @@ main();
   
 </br>
 
-# Info
+## Info
 - Discord: Guuzzeji#2245
 - Reddit: /u/Guuzzeji

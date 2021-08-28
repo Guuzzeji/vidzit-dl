@@ -64,7 +64,7 @@ main();
 ```
 </br>
 
-# How To Instal
+# How To Install
 > Note: If you are getting any errors about webassembly and node, make sure you are have everything install right and run this line: 
 > ```sh 
 > node --experimental-wasm-threads --experimental-wasm-bulk-memory [index.js or whatever]

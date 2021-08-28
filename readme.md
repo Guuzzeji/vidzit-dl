@@ -13,7 +13,7 @@
 
 # CLI Tool
 
->Note: CLI tools have only been tested on Mac OS
+>Note: CLI tools has only been tested on Mac OS
 
 <p>Run reddit-dl in your terminal and paste in your reddit video url</p>
 

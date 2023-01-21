@@ -2,7 +2,7 @@
   "name": "reddit-vid-dl",
   "version": "2.0.0",
   "description": "Download reddit video by cli or use the api",
-  "main": "core.js",
+  "main": "index.js",
   "bin": {
     "reddit-dl": "./bin/cli/index.js"
   },

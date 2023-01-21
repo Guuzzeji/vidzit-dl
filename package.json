@@ -11,6 +11,7 @@
   "dependencies": {
     "@ffmpeg/core": "^0.8.5",
     "@ffmpeg/ffmpeg": "^0.9.7",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "xml-js": "^1.6.11"
   }
 }

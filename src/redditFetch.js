@@ -18,25 +18,31 @@ exports.fetchUrls = async function (url) {
         return data;
     });
 
-    parseDASH(dashFile, redditVideo.baseURL);
+    return parseDASH(dashFile, redditVideo.baseURL);
 };
 
 function parseDASH(file, baseURL) {
     let jsonDash = JSON.parse(XML.xml2json(file, { compact: true }));
 
-    console.log(jsonDash.MPD.Period.AdaptationSet[1]);
+    let videoFormat = [];
+    jsonDash.MPD.Period.AdaptationSet[0].Representation.forEach(element => {
+        videoFormat.push(videoDash(element, baseURL));
+    });
 
-    let formats = [];
+    // Getting max audio
+    videoFormat.push(videoDash(jsonDash.MPD.Period.AdaptationSet[0], baseURL));
 
-    formats.push(audioDash(jsonDash.MPD.Period.AdaptationSet[1], baseURL));
-
-    console.log(formats);
-
+    return {
+        redditURL: baseURL,
+        video: videoFormat,
+        audio: audioDash(jsonDash.MPD.Period.AdaptationSet[1], baseURL)
+    };
 }
 
 function videoDash(json, baseURL) {
     return {
-        type: json._attributes.contentType,
+        type: "video",
+        MaxFormat: (json.BaseURL != undefined) ? false : true,
         format: json._attributes.height || json._attributes.maxHeight,
         url: (json.BaseURL != undefined) ? `${baseURL}/${json.BaseURL._text}` : `${baseURL}/DASH_${json._attributes.maxHeight}.mp4`,
         info: json._attributes
@@ -45,7 +51,7 @@ function videoDash(json, baseURL) {
 
 function audioDash(json, baseURL) {
     return {
-        type: json._attributes.contentType,
+        type: "audio",
         url: `${baseURL}/${json.Representation.BaseURL._text}`,
         info: json._attributes,
         audioInfo: json.Representation._attributes

@@ -18,8 +18,6 @@ exports.fetchUrls = async function (url) {
         return data;
     });
 
-    console.log(parseDASH(dashFile, redditVideo.baseURL));
-
     return {
         baseURL: redditVideo.baseURL,
         dashURL: redditVideo.dashURL,
@@ -64,5 +62,5 @@ function audioDash(json, baseURL) {
 }
 
 // Testing
-this.fetchUrls("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
+// this.fetchUrls("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
 

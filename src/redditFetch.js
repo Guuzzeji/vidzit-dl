@@ -20,7 +20,11 @@ exports.fetchUrls = async function (url) {
 
     console.log(parseDASH(dashFile, redditVideo.baseURL));
 
-    return parseDASH(dashFile, redditVideo.baseURL);
+    return {
+        baseURL: redditVideo.baseURL,
+        dashURL: redditVideo.dashURL,
+        dashContent: parseDASH(dashFile, redditVideo.baseURL)
+    };
 };
 
 function parseDASH(file, baseURL) {
@@ -35,7 +39,6 @@ function parseDASH(file, baseURL) {
     videoFormat.push(videoDash(jsonDash.MPD.Period.AdaptationSet[0], baseURL));
 
     return {
-        redditURL: baseURL,
         video: videoFormat,
         audio: audioDash(jsonDash.MPD.Period.AdaptationSet[1], baseURL)
     };

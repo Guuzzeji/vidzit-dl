@@ -18,6 +18,8 @@ exports.fetchUrls = async function (url) {
         return data;
     });
 
+    console.log(parseDASH(dashFile, redditVideo.baseURL));
+
     return parseDASH(dashFile, redditVideo.baseURL);
 };
 
@@ -29,7 +31,7 @@ function parseDASH(file, baseURL) {
         videoFormat.push(videoDash(element, baseURL));
     });
 
-    // Getting max audio
+    // Getting max video
     videoFormat.push(videoDash(jsonDash.MPD.Period.AdaptationSet[0], baseURL));
 
     return {
@@ -45,7 +47,7 @@ function videoDash(json, baseURL) {
         MaxFormat: (json.BaseURL != undefined) ? false : true,
         format: json._attributes.height || json._attributes.maxHeight,
         url: (json.BaseURL != undefined) ? `${baseURL}/${json.BaseURL._text}` : `${baseURL}/DASH_${json._attributes.maxHeight}.mp4`,
-        info: json._attributes
+        // info: json._attributes
     };
 }
 
@@ -53,11 +55,11 @@ function audioDash(json, baseURL) {
     return {
         type: "audio",
         url: `${baseURL}/${json.Representation.BaseURL._text}`,
-        info: json._attributes,
-        audioInfo: json.Representation._attributes
+        // info: json._attributes,
+        // audioInfo: json.Representation._attributes
     };
 }
 
 // Testing
-this.fetchUrls("https://www.reddit.com/r/reactnative/comments/10hloqz/created_this_bottom_nav_using_reactnativeskia");
+this.fetchUrls("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
 

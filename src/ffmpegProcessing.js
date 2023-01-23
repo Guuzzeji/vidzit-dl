@@ -1,7 +1,6 @@
 const { createFFmpeg, fetchFile } = require('@ffmpeg/ffmpeg');
 
 exports.createVideo = async function ({ videoURL, audioURL, setLogging = false, setLogger, setProgress }) {
-
     const ffmpeg = createFFmpeg();
     ffmpeg.setLogging(setLogging);
 

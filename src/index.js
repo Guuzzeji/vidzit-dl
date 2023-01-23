@@ -39,7 +39,7 @@ class RedditVideoDL {
         }
     }
 
-    async createVideo({ format, setLogging, setLogger, setProgress }) {
+    async createVideo({ format = null, setLogging, setLogger, setProgress }) {
         let videoFormat;
 
         try {

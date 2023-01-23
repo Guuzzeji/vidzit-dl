@@ -26,11 +26,27 @@ class RedditVideoDL {
             }
         }
 
-        return null;
+        throw "Could not find format";
+    }
+
+    findMaxFormatVideo() {
+        let videosTypes = this.videoDashFiles.dashContent.video;
+
+        for (let video of videosTypes) {
+            if (video.MaxFormat == true) {
+                return video;
+            }
+        }
     }
 
     async createVideo(format) {
-        let videoFormat = this.findFormatVideo(format);
+        let videoFormat;
+
+        try {
+            videoFormat = this.findFormatVideo(format);
+        } catch {
+            videoFormat = this.findMaxFormatVideo();
+        }
 
         return await createVideo({
             videoURL: videoFormat.url,

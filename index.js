@@ -4,13 +4,19 @@ const fs = require('fs');
 
 
 class RedditVideoDL {
-
     #videoDashFiles;
-    #redditURL;
     #ffmpeg;
 
-    constructor(redditURL) {
-        this.redditURL = redditURL;
+    static async initialize(redditURL) {
+        let dashInfo = await redditFetch(redditURL);
+        return new RedditVideoDL(dashInfo);
+    }
+
+    constructor(dashInfo) {
+        this.videoDashFiles = dashInfo;
+        this.ffmpeg = createFFmpeg({
+            log: true
+        });
     }
 
     get videoStreamsInfo() {
@@ -29,15 +35,8 @@ class RedditVideoDL {
         return null;
     }
 
-    async initialize() {
-        this.videoDashFiles = await redditFetch(this.redditURL);
-        this.ffmpeg = createFFmpeg({
-            log: true
-        });
-    }
 
     async createVideo(format) {
-
         let videoFormat = this.findFormatVideo(format);
 
         await this.ffmpeg.load();
@@ -59,13 +58,12 @@ class RedditVideoDL {
 
 // Testing
 async function main() {
-    let video1 = new RedditVideoDL("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
-    await video1.initialize();
-    console.log(await video1.createVideo("720"));
-
-    let video2 = new RedditVideoDL("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
-    await video2.initialize();
-    fs.writeFileSync("./test.mp4", await video2.createVideo("720"));
+    let video1 = await RedditVideoDL.initialize("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
+    console.log(video1.videoStreamsInfo);
+    `
+    // let video2 = new RedditVideoDL("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
+    // await video2.initialize();
+    // fs.writeFileSync("./test.mp4", await video2.createVideo("720"));`;
 }
 
 main();

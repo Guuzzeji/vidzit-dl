@@ -39,7 +39,7 @@ class RedditVideoDL {
         }
     }
 
-    async createVideo(format) {
+    async createVideo({ format, setLogging, setLogger, setProgress }) {
         let videoFormat;
 
         try {
@@ -51,6 +51,9 @@ class RedditVideoDL {
         return await createVideo({
             videoURL: videoFormat.url,
             audioURL: this.videoDashFiles.dashContent.audio.url,
+            setLogging,
+            setLogger,
+            setProgress
         });
     }
 

@@ -8,7 +8,7 @@ exports.createVideo = async function ({ videoURL, audioURL, setLogging = false, 
         try {
             setLogger(type, message);
         } catch {
-            return false;
+            return;
         }
     });
 
@@ -16,7 +16,7 @@ exports.createVideo = async function ({ videoURL, audioURL, setLogging = false, 
         try {
             setProgress(ratio);
         } catch {
-            return false;
+            return;
         }
     });
 

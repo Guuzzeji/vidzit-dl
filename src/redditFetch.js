@@ -3,14 +3,26 @@ const XML = require('xml-js');
 
 //* Gets the audio and video link from Reddit Api
 exports.fetchUrls = async function (url) {
-    let redditVideo = await fetch(url + '.json').then(function (res) {
-        return res.json();
-    }).then(function (json) {
-        return {
-            baseURL: json[0].data.children[0].data.url,
-            dashURL: json[0].data.children[0].data.secure_media.reddit_video.dash_url
-        };
-    });
+    let redditVideo;
+
+    try {
+        redditVideo = await fetch(url + '.json').then(function (res) {
+            return res.json();
+        }).then(function (json) {
+            let redditAPIData = json[0].data.children[0].data;
+
+            if (isVideo(redditAPIData)) {
+                return {
+                    baseURL: redditAPIData.url,
+                    dashURL: redditAPIData.secure_media.reddit_video.dash_url
+                };
+            } else {
+                throw new Error("Was not a video");
+            }
+        });
+    } catch (e) {
+        throw e;
+    }
 
     let dashFile = await fetch(redditVideo.dashURL).then(function (res) {
         return res.text();
@@ -59,6 +71,14 @@ function audioDash(json, baseURL) {
         // info: json._attributes,
         // audioInfo: json.Representation._attributes
     };
+}
+
+function isVideo(json) {
+    if (!json.is_video || json.secure_media == undefined) {
+        return false;
+    }
+
+    return true;
 }
 
 // Testing

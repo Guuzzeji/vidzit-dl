@@ -26,7 +26,7 @@ class RedditVideoDL {
             }
         }
 
-        throw "Could not find format";
+        throw new Error("Could not find video format");
     }
 
     findMaxFormatVideo() {

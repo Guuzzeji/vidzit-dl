@@ -33,7 +33,7 @@ class VidzditDL {
         let videosTypes = this.VIDEO_INFO.dashContent.video;
 
         for (let video of videosTypes) {
-            if (video.MaxFormat == true) {
+            if (video.maxFormat == true) {
                 return video;
             }
         }

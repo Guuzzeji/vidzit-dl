@@ -57,7 +57,7 @@ function parseDASH(file, baseURL) {
 function videoDash(json, baseURL) {
     return {
         type: "video",
-        MaxFormat: (json.BaseURL != undefined) ? false : true,
+        maxFormat: (json.BaseURL != undefined) ? false : true,
         format: json._attributes.height || json._attributes.maxHeight,
         url: (json.BaseURL != undefined) ? `${baseURL}/${json.BaseURL._text}` : `${baseURL}/DASH_${json._attributes.maxHeight}.mp4`,
         // info: json._attributes

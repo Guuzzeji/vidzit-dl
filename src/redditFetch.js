@@ -81,6 +81,3 @@ function isVideo(json) {
     return true;
 }
 
-// Testing
-// this.fetchUrls("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
-

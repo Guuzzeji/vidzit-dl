@@ -1,12 +1,12 @@
 const redditFetch = require('./redditFetch').fetchUrls;
 const createVideo = require('./ffmpegProcessing').createVideo;
 
-class VidzditDL {
+class VidzDitDL {
     #VIDEO_INFO;
 
     static async initialize(redditURL) {
         let redditVideo = await redditFetch(redditURL);
-        return new VidzditDL(redditVideo);
+        return new VidzDitDL(redditVideo);
     }
 
     constructor(info) {
@@ -59,4 +59,4 @@ class VidzditDL {
 
 };
 
-module.exports = VidzditDL;
+module.exports = VidzDitDL;

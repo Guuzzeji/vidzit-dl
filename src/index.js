@@ -10,15 +10,15 @@ class VidzDitDL {
     }
 
     constructor(info) {
-        this.VIDEO_INFO = info;
+        this.#VIDEO_INFO = info;
     }
 
     get videoInfo() {
-        return this.VIDEO_INFO;
+        return this.#VIDEO_INFO;
     }
 
     findFormatVideo(format) {
-        let videosTypes = this.VIDEO_INFO.dashContent.video;
+        let videosTypes = this.#VIDEO_INFO.dashContent.video;
 
         for (let video of videosTypes) {
             if (video.format == format) {
@@ -30,7 +30,7 @@ class VidzDitDL {
     }
 
     findMaxFormatVideo() {
-        let videosTypes = this.VIDEO_INFO.dashContent.video;
+        let videosTypes = this.#VIDEO_INFO.dashContent.video;
 
         for (let video of videosTypes) {
             if (video.maxFormat == true) {
@@ -50,7 +50,7 @@ class VidzDitDL {
 
         return await createVideo({
             videoURL: videoFormat.url,
-            audioURL: this.VIDEO_INFO.dashContent.audio.url,
+            audioURL: this.#VIDEO_INFO.dashContent.audio.url,
             setLogging,
             setLogger,
             setProgress

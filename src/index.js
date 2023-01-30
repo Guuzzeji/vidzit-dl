@@ -1,24 +1,24 @@
 const redditFetch = require('./redditFetch').fetchUrls;
 const createVideo = require('./ffmpegProcessing').createVideo;
 
-class RedditVideoDL {
-    #videoDashFiles;
+class VidzditDL {
+    #VIDEO_INFO;
 
     static async initialize(redditURL) {
-        let dashInfo = await redditFetch(redditURL);
-        return new RedditVideoDL(dashInfo);
+        let redditVideo = await redditFetch(redditURL);
+        return new VidzditDL(redditVideo);
     }
 
-    constructor(dashInfo) {
-        this.videoDashFiles = dashInfo;
+    constructor(info) {
+        this.VIDEO_INFO = info;
     }
 
-    get videoStreamsInfo() {
-        return this.videoDashFiles;
+    get redditVideoInfo() {
+        return this.VIDEO_INFO;
     }
 
     findFormatVideo(format) {
-        let videosTypes = this.videoDashFiles.dashContent.video;
+        let videosTypes = this.VIDEO_INFO.dashContent.video;
 
         for (let video of videosTypes) {
             if (video.format == format) {
@@ -30,7 +30,7 @@ class RedditVideoDL {
     }
 
     findMaxFormatVideo() {
-        let videosTypes = this.videoDashFiles.dashContent.video;
+        let videosTypes = this.VIDEO_INFO.dashContent.video;
 
         for (let video of videosTypes) {
             if (video.MaxFormat == true) {
@@ -50,7 +50,7 @@ class RedditVideoDL {
 
         return await createVideo({
             videoURL: videoFormat.url,
-            audioURL: this.videoDashFiles.dashContent.audio.url,
+            audioURL: this.VIDEO_INFO.dashContent.audio.url,
             setLogging,
             setLogger,
             setProgress
@@ -59,4 +59,4 @@ class RedditVideoDL {
 
 };
 
-module.exports = RedditVideoDL;
+module.exports = VidzditDL;

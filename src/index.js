@@ -13,7 +13,7 @@ class VidzDitDL {
         this.VIDEO_INFO = info;
     }
 
-    get redditVideoInfo() {
+    get videoInfo() {
         return this.VIDEO_INFO;
     }
 

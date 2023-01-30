@@ -2,9 +2,29 @@
   "name": "vdl-reddit",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "author": "Guuzzeji",
+  "author": "Guuzzeji <gabe.business.code@outlook.com> (https://github.com/Guuzzeji)",
   "license": "MIT",
+  "main": "index.js",
+  "engines": {
+    "node": ">=15"
+  },
+  "keywords": [
+    "reddit",
+    "download",
+    "video",
+    "ffmpeg"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Guuzzeji/reddit-vid-dl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Guuzzeji/reddit-vid-dl/issues"
+  },
+  "homepage": "https://github.com/Guuzzeji/reddit-vid-dl#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "@ffmpeg/core": "^0.11.0",
     "@ffmpeg/ffmpeg": "^0.11.6",

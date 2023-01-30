@@ -1,1 +1,1 @@
-exports.RedditVideoDL = require("./src/index");
+module.exports = require("./src/index");

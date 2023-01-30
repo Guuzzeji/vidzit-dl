@@ -74,7 +74,7 @@ function audioDash(json, baseURL) {
 }
 
 function isVideo(json) {
-    if (!json.is_video || json.secure_media == undefined) {
+    if (!json.is_video || json.secure_media == undefined || json.secure_media == null) {
         return false;
     }
 

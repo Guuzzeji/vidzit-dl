@@ -2,13 +2,19 @@ const { createFFmpeg, fetchFile } = require('@ffmpeg/ffmpeg');
 
 exports.createVideo = async function ({ videoURL, audioURL, setLogging = false, setLogger, setProgress }) {
     const ffmpeg = createFFmpeg();
+
+    // Will print out ffmpeg logs
     ffmpeg.setLogging(setLogging);
 
     ffmpeg.setLogger(({ type, message }) => {
         try {
             setLogger(type, message);
         } catch {
-            return;
+            if (setLogger) {
+                console.log(type, "=>", message);
+            } else {
+                return;
+            }
         }
     });
 

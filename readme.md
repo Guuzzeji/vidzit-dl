@@ -8,11 +8,11 @@ A simple reddit video downloader that allows you to download videos from reddit 
 
 **IMPORTANT NOTE:** Video can't be embedded (No Youtube links, No Vimeo, etc).
 
-# Table of Contents
-- [Table of Contents](#table-of-contents)
-- [How To Install](#how-to-install)
-- [Example](#example)
-- [API](#api)
+# 📌 Table of Contents
+- [📌 Table of Contents](#-table-of-contents)
+- [💻 How To Install](#-how-to-install)
+- [✏️ Example](#️-example)
+- [📖 API](#-api)
     - [VidzitDL](#vidzitdl)
     - [VidzitDL.initialize(redditURL) ⇒ Promise.\<VidzitDL\>](#vidzitdlinitializeredditurl--promisevidzitdl)
     - [vidzitDL.videoInfo](#vidzitdlvideoinfo)
@@ -23,12 +23,12 @@ A simple reddit video downloader that allows you to download videos from reddit 
     - [Example of Return JSON](#example-of-return-json-2)
     - [vidzitDL.createVideo(options) ⇒ Promise.\<Uint8Array\>](#vidzitdlcreatevideooptions--promiseuint8array)
 
-# How To Install
+# 💻 How To Install
 ```bash
 npm install vidzit-dl
 ```
 
-# Example
+# ✏️ Example
 ```js
 const VidzitDL = require("vidzit-dl");
 
@@ -50,7 +50,7 @@ async function main() {
 main()
 ```
 
-# API
+# 📖 API
 <a name="VidzitDL"></a>
 
 ### VidzitDL

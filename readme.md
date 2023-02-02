@@ -2,11 +2,7 @@
 <img src="./reddit-readme.gif"></img>
 </p>
 
-<br>
-
-<h1 align="center">vidzit-dl</h1>
-
-<br>
+<h1 align="center">Vidzit-DL</h1>
 
 <p>A simple reddit video downloader that allows you to download videos from reddit using node js.</p>
 

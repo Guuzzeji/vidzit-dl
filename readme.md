@@ -180,4 +180,3 @@ Creates a video with the specified format you want. OR can default to max resolu
 
 - Create a pull request
   - Make sure to add a description of what changes you have made and why your changes are important.
-

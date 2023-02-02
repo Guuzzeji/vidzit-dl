@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./reddit-readme.gif"></img>
+<img src="./assets/reddit-readme.gif"></img>
 </p>
 
 <h1 align="center">Vidzit-DL</h1>

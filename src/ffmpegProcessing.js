@@ -33,7 +33,7 @@ exports.createVideo = async function ({ videoURL, audioURL, setLogging = false, 
 
     await ffmpeg.run('-i', 'video.mp4', '-i', 'audio.mp4', '-c:v', 'copy', '-c:a', 'copy', 'output.mp4');
 
-    //* Return Uint8Array which can be save as a file or something else\
+    //* Return Uint8Array which can be save as a file or something else
     try {
         return ffmpeg.FS('readFile', 'output.mp4');
     } finally {

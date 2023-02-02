@@ -14,8 +14,11 @@ A simple reddit video downloader that allows you to download videos from reddit 
     - [VidzitDL](#vidzitdl)
     - [VidzitDL.initialize(redditURL) ⇒ Promise.\<VidzitDL\>](#vidzitdlinitializeredditurl--promisevidzitdl)
     - [vidzitDL.videoInfo](#vidzitdlvideoinfo)
+    - [Example of Return JSON](#example-of-return-json)
     - [vidzitDL.findFormatVideo(format) ⇒ JSON](#vidzitdlfindformatvideoformat--json)
+    - [Example of Return JSON](#example-of-return-json-1)
     - [vidzitDL.findMaxFormatVideo() ⇒ JSON](#vidzitdlfindmaxformatvideo--json)
+    - [Example of Return JSON](#example-of-return-json-2)
     - [vidzitDL.createVideo(options) ⇒ Promise.\<Uint8Array\>](#vidzitdlcreatevideooptions--promiseuint8array)
 
 # How To Install
@@ -79,6 +82,29 @@ Returns the video information like video url and reddit base url of post
 
 **Kind**: instance property of [<code>VidzitDL</code>](#VidzitDL)  
 
+### Example of Return JSON
+```js
+{
+  baseURL: "{URL to reddit post}"
+  dashURL: "{URL to dash file}",
+  dashContent: {
+    video: [
+      {
+        type: "video",
+        maxFormat: true || false,
+        format: "720",
+        url: "{URL to video format}",
+      },
+      ...
+    ],
+    audio: {
+      type: "audio",
+      url: "{URL to audio files}",
+    }
+  }
+}
+```
+
 ---
 
 <a name="VidzitDL+findFormatVideo"></a>
@@ -93,6 +119,16 @@ Searchs dash file to find video resolution (Ex: 480, 720, 1080). It can also ret
 | --- | --- | --- |
 | format | <code>String</code> | the video format you want (Ex: 480, 720, 1080) |
 
+### Example of Return JSON
+```js
+{
+  type: "video",
+  maxFormat: true || false,
+  format: "720",
+  url: "{URL to video format}",
+}
+```
+
 ---
 
 <a name="VidzitDL+findMaxFormatVideo"></a>
@@ -103,6 +139,16 @@ Searchs dash file to find video resolution for max resolution of video.
 **Kind**: instance method of [<code>VidzitDL</code>](#VidzitDL)  
 **Returns**: <code>JSON</code> - A json of the video resolution url and other infomation  
 <a name="VidzitDL+createVideo"></a>
+
+### Example of Return JSON
+```js
+{
+  type: "video",
+  maxFormat: true,
+  format: "1080",
+  url: "{URL to video format}",
+}
+```
 
 ---
 

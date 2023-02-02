@@ -1,10 +1,15 @@
 <p align="center">
 <img src="./reddit-readme.gif"></img>
 </p>
+
 <br>
 
-# Reddit-vid-dl  & Reddit-dl Cli
-<p>A simple reddit video downloader that allows you to download videos from reddit using node js.</o>
+<h1 align="center">vidzit-dl</h1>
+
+<br>
+
+<p>A simple reddit video downloader that allows you to download videos from reddit using node js.</p>
+
 <p>Made using <a href="https://www.npmjs.com/package/node-fetch">node-fetch</a> and <a href="https://github.com/ffmpegwasm/ffmpeg.wasm">ffmpeg.wasm</a></p>
 
 > NOTE: Video can't be embedded (No Youtube links, No Vimeo, etc).

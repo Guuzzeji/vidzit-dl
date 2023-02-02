@@ -6,6 +6,18 @@
 
 A simple reddit video downloader that allows you to download videos from reddit using node js. **NOTE:** Video can't be embedded (No Youtube links, No Vimeo, etc). Made using [node-fetch](https://www.npmjs.com/package/node-fetch) and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).
 
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [How To Install](#how-to-install)
+- [Example](#example)
+- [API](#api)
+    - [VidzitDL](#vidzitdl)
+    - [VidzitDL.initialize(redditURL) ⇒ Promise.\<VidzitDL\>](#vidzitdlinitializeredditurl--promisevidzitdl)
+    - [vidzitDL.videoInfo](#vidzitdlvideoinfo)
+    - [vidzitDL.findFormatVideo(format) ⇒ JSON](#vidzitdlfindformatvideoformat--json)
+    - [vidzitDL.findMaxFormatVideo() ⇒ JSON](#vidzitdlfindmaxformatvideo--json)
+    - [vidzitDL.createVideo(options) ⇒ Promise.\<Uint8Array\>](#vidzitdlcreatevideooptions--promiseuint8array)
+
 # How To Install
 ```bash
   npm install vidzit-dl
@@ -41,16 +53,6 @@ Download reddit videos through node.js
 
 **Kind**: global class  
 **See**: [https://github.com/Guuzzeji/reddit-vid-dl#readme](https://github.com/Guuzzeji/reddit-vid-dl#readme)  
-
-- [How To Install](#how-to-install)
-- [Example](#example)
-- [API](#api)
-    - [VidzitDL](#vidzitdl)
-    - [VidzitDL.initialize(redditURL) ⇒ Promise.\<VidzitDL\>](#vidzitdlinitializeredditurl--promisevidzitdl)
-    - [vidzitDL.videoInfo](#vidzitdlvideoinfo)
-    - [vidzitDL.findFormatVideo(format) ⇒ JSON](#vidzitdlfindformatvideoformat--json)
-    - [vidzitDL.findMaxFormatVideo() ⇒ JSON](#vidzitdlfindmaxformatvideo--json)
-    - [vidzitDL.createVideo(options) ⇒ Promise.\<Uint8Array\>](#vidzitdlcreatevideooptions--promiseuint8array)
 
 ---
 

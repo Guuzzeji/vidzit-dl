@@ -22,6 +22,7 @@ A simple reddit video downloader that allows you to download videos from reddit 
     - [vidzitDL.findMaxFormatVideo() ⇒ JSON](#vidzitdlfindmaxformatvideo--json)
     - [Example of Return JSON](#example-of-return-json-2)
     - [vidzitDL.createVideo(options) ⇒ Promise.\<Uint8Array\>](#vidzitdlcreatevideooptions--promiseuint8array)
+- [🤝 How to Contribute (Thank You!)](#-how-to-contribute-thank-you)
 
 # 💻 How To Install
 ```bash
@@ -167,3 +168,14 @@ Creates a video with the specified format you want. OR can default to max resolu
 | options.setLogging | <code>Boolean</code> | Turn on/off if you want to see ffmpeg logs. Default is fale. |
 | options.setLogger | <code>function</code> | Allows you to process ffmpeg logs with your own function. |
 | options.setProgress | <code>function</code> | Allows you to process ffmpeg progresss with your own function. |
+
+---
+
+# 🤝 How to Contribute (Thank You!)
+- Fork the main branch
+
+- Open your fork and add your changes / features / bug fixes
+
+- Create a pull request
+  - Make sure to add a description of what changes you have made and why your changes are important.
+

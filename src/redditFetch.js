@@ -5,6 +5,8 @@ const XML = require('xml-js');
 exports.fetchUrls = async function (url) {
     let redditVideo;
 
+    // Fetching base url and dash file from reddit API
+    // Return "was not video" error if it cannot find video urls 
     try {
         redditVideo = await fetch(url + '.json').then(function (res) {
             return res.json();
@@ -24,6 +26,7 @@ exports.fetchUrls = async function (url) {
         throw e;
     }
 
+    // Fetching dash XML file
     let dashFile = await fetch(redditVideo.dashURL).then(function (res) {
         return res.text();
     }).then(function (data) {

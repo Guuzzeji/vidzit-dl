@@ -131,3 +131,6 @@ dist
 
 # Mac OS
 .DS_store
+
+# Testing js
+test.js

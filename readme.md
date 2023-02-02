@@ -4,9 +4,11 @@
 
 <h1 align="center">Vidzit-DL</h1>
 
-A simple reddit video downloader that allows you to download videos from reddit using node js. Made using [node-fetch](https://www.npmjs.com/package/node-fetch) and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).
+A simple Reddit video downloader that allows you to download videos from Reddit using node js. Made using [node-fetch](https://www.npmjs.com/package/node-fetch) and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).
 
 **IMPORTANT NOTE:** Video can't be embedded (No Youtube links, No Vimeo, etc).
+
+This is not an official Reddit library, but we do use Reddit's official web API.
 
 # 📌 Table of Contents
 - [📌 Table of Contents](#-table-of-contents)

@@ -4,7 +4,7 @@ const createVideo = require('./ffmpegProcessing').createVideo;
 /** Download reddit videos through node.js 
  * @see {@link https://github.com/Guuzzeji/reddit-vid-dl#readme}
 */
-class VidzDitDL {
+class VidzitDL {
 
     /**
      * Used to store dash infomation created by redditFetch function
@@ -15,11 +15,11 @@ class VidzDitDL {
      * Initialize the VidezDitDL class and create an object from it.
      * @async
      * @param {String} redditURL A normal reddit url of the video post you want to download
-     * @returns {Promise<VidzDitDL>} returns an VidzDitDL object that can be used to get information about the video dash urls and download the video
+     * @returns {Promise<VidzitDL>} returns an VidzitDL object that can be used to get information about the video dash urls and download the video
      */
     static async initialize(redditURL) {
         let redditVideo = await redditFetch(redditURL);
-        return new VidzDitDL(redditVideo);
+        return new VidzitDL(redditVideo);
     }
 
     /**
@@ -100,4 +100,4 @@ class VidzDitDL {
 
 };
 
-module.exports = VidzDitDL;
+module.exports = VidzitDL;

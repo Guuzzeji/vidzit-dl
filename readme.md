@@ -1,8 +1,23 @@
 <p align="center">
-<img src="./assets/reddit-readme.gif"></img>
+<img src="./assets/Screenshot%202023-02-02%20at%207.08.25%20PM.png"></img>
 </p>
 
-<h1 align="center">Vidzit-DL</h1>
+<!-- <h1 align="center">Vidzit-DL</h1> -->
+
+<p align="center">
+  <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/Guuzzeji/vidzit-dl">
+  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Guuzzeji/vidzit-dl">
+  <img alt="GitHub" src="https://img.shields.io/github/license/Guuzzeji/vidzit-dl">
+  <img alt="npm" src="https://img.shields.io/npm/dm/vidzit-dl">
+  <img alt="node-current" src="https://img.shields.io/node/v/vidzit-dl">
+</p>
+
+<p align="center">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Guuzzeji/vidzit-dl?style=social">
+  <a href="https://twitter.com/intent/tweet?url=https://github.com/Guuzzeji/vidzit-dl/&hashtags=reddit,github,nodejs,ffmpeg, programming">
+    <img alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FGuuzzeji%2Fvidzit-dl">
+  </a>
+</p>
 
 A simple Reddit video downloader that allows you to download videos from Reddit using node js. Made using [node-fetch](https://www.npmjs.com/package/node-fetch) and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).
 
@@ -18,11 +33,11 @@ This is not an official Reddit library, but we do use Reddit's official web API.
     - [VidzitDL](#vidzitdl)
     - [VidzitDL.initialize(redditURL) ⇒ Promise.\<VidzitDL\>](#vidzitdlinitializeredditurl--promisevidzitdl)
     - [vidzitDL.videoInfo](#vidzitdlvideoinfo)
-    - [Example of Return JSON](#example-of-return-json)
+      - [**Example of Return JSON**](#example-of-return-json)
     - [vidzitDL.findFormatVideo(format) ⇒ JSON](#vidzitdlfindformatvideoformat--json)
-    - [Example of Return JSON](#example-of-return-json-1)
+      - [**Example of Return JSON**](#example-of-return-json-1)
     - [vidzitDL.findMaxFormatVideo() ⇒ JSON](#vidzitdlfindmaxformatvideo--json)
-    - [Example of Return JSON](#example-of-return-json-2)
+      - [**Example of Return JSON**](#example-of-return-json-2)
     - [vidzitDL.createVideo(options) ⇒ Promise.\<Uint8Array\>](#vidzitdlcreatevideooptions--promiseuint8array)
 - [🤝 How to Contribute (Thank You!)](#-how-to-contribute-thank-you)
 
@@ -93,7 +108,7 @@ Returns the video information like video url and reddit base url of post
 
 **Kind**: instance property of [<code>VidzitDL</code>](#VidzitDL)  
 
-### Example of Return JSON
+#### **Example of Return JSON**
 ```js
 {
   baseURL: "{URL to reddit post}"
@@ -130,7 +145,7 @@ Searchs dash file to find video resolution (Ex: 480, 720, 1080). It can also ret
 | --- | --- | --- |
 | format | <code>String</code> | the video format you want (Ex: 480, 720, 1080) |
 
-### Example of Return JSON
+#### **Example of Return JSON**
 ```js
 {
   type: "video",
@@ -151,7 +166,7 @@ Searchs dash file to find video resolution for max resolution of video.
 **Returns**: <code>JSON</code> - A json of the video resolution url and other infomation  
 <a name="VidzitDL+createVideo"></a>
 
-### Example of Return JSON
+#### **Example of Return JSON**
 ```js
 {
   type: "video",

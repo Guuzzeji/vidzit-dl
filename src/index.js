@@ -74,13 +74,12 @@ class VidzitDL {
      * @async
      * @param {Object} options JSON that stores all options for this function
      * @param {String} options.format The format you want to download (Ex: 480, 720, 1080). Default is max resolution if not specified.
-     * @param {Boolean} options.setLogging Turn on/off if you want to see ffmpeg logs. Default is fale.
      * @param {Function} options.setLogger Allows you to process ffmpeg logs with your own function.
      * @param {Function} options.setProgress Allows you to process ffmpeg progresss with your own function.
      * @see More infomation how to use setLogger and setProgress {@link https://github.com/ffmpegwasm/ffmpeg.wasm/blob/master/docs/api.md#ffmpeg-setlogging}
      * @returns {Promise<Uint8Array>}
      */
-    async createVideo({ format, setLogging, setLogger, setProgress } = {}) {
+    async createVideo({ format, setLogger, setProgress } = {}) {
         let videoFormat;
 
         try {
@@ -92,7 +91,6 @@ class VidzitDL {
         return await createVideo({
             videoURL: videoFormat.url,
             audioURL: this.#VIDEO_INFO.dashContent.audio.url,
-            setLogging,
             setLogger,
             setProgress
         });

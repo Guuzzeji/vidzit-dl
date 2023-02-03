@@ -1,6 +1,6 @@
 {
   "name": "vidzit-dl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple Reddit video downloader that allows you to download videos from Reddit using node js. Made using node-fetch and ffmpeg.wasm.",
   "author": "Guuzzeji <gabe.business.code@outlook.com> (https://github.com/Guuzzeji)",
   "license": "MIT",

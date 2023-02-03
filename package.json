@@ -23,12 +23,15 @@
   },
   "homepage": "https://github.com/Guuzzeji/reddit-vid-dl#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "create-docs": "./node_modules/jsdoc-to-markdown/bin/cli.js ./src/index.js"
   },
   "dependencies": {
     "@ffmpeg/core": "^0.11.0",
     "@ffmpeg/ffmpeg": "^0.11.6",
     "node-fetch": "^2.6.1",
     "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^8.0.0"
   }
 }

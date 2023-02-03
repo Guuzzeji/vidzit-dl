@@ -35,7 +35,7 @@ npm install vidzit-dl
 ```js
 const VidzitDL = require("vidzit-dl");
 
-async function main() {
+async function example1() {
     let video1 = await VidzitDL.initialize("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
     console.log(video1.videoInfo);
     console.log(await video1.createVideo({
@@ -49,7 +49,14 @@ async function main() {
     }));
 }
 
-main();
+async function example2() {
+    let video1 = await VidzitDL.initialize("https://www.reddit.com/r/IndieDev/comments/10hgvjq/vr_has_been_punishing_for_particles");
+    console.log(video1.videoInfo);
+    console.log(await video1.createVideo());
+}
+
+example1()
+example2()
 ```
 
 # 📖 API

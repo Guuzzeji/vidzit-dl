@@ -16,12 +16,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/Guuzzeji/reddit-vid-dl.git"
+    "url": "git://github.com/Guuzzeji/vidzit-dl.git"
   },
   "bugs": {
-    "url": "https://github.com/Guuzzeji/reddit-vid-dl/issues"
+    "url": "https://github.com/Guuzzeji/vidzit-dl/issues"
   },
-  "homepage": "https://github.com/Guuzzeji/reddit-vid-dl#readme",
+  "homepage": "https://github.com/Guuzzeji/vidzit-dl#readme",
   "scripts": {
     "create-docs": "./node_modules/jsdoc-to-markdown/bin/cli.js ./src/index.js"
   },

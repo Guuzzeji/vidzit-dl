@@ -18,11 +18,11 @@ This is not an official Reddit library, but we do use Reddit's official web API.
     - [VidzitDL](#vidzitdl)
     - [VidzitDL.initialize(redditURL) ⇒ Promise.\<VidzitDL\>](#vidzitdlinitializeredditurl--promisevidzitdl)
     - [vidzitDL.videoInfo](#vidzitdlvideoinfo)
-    - [Example of Return JSON](#example-of-return-json)
+      - [**Example of Return JSON**](#example-of-return-json)
     - [vidzitDL.findFormatVideo(format) ⇒ JSON](#vidzitdlfindformatvideoformat--json)
-    - [Example of Return JSON](#example-of-return-json-1)
+      - [**Example of Return JSON**](#example-of-return-json-1)
     - [vidzitDL.findMaxFormatVideo() ⇒ JSON](#vidzitdlfindmaxformatvideo--json)
-    - [Example of Return JSON](#example-of-return-json-2)
+      - [**Example of Return JSON**](#example-of-return-json-2)
     - [vidzitDL.createVideo(options) ⇒ Promise.\<Uint8Array\>](#vidzitdlcreatevideooptions--promiseuint8array)
 - [🤝 How to Contribute (Thank You!)](#-how-to-contribute-thank-you)
 
@@ -93,7 +93,7 @@ Returns the video information like video url and reddit base url of post
 
 **Kind**: instance property of [<code>VidzitDL</code>](#VidzitDL)  
 
-### Example of Return JSON
+#### **Example of Return JSON**
 ```js
 {
   baseURL: "{URL to reddit post}"
@@ -130,7 +130,7 @@ Searchs dash file to find video resolution (Ex: 480, 720, 1080). It can also ret
 | --- | --- | --- |
 | format | <code>String</code> | the video format you want (Ex: 480, 720, 1080) |
 
-### Example of Return JSON
+#### **Example of Return JSON**
 ```js
 {
   type: "video",
@@ -151,7 +151,7 @@ Searchs dash file to find video resolution for max resolution of video.
 **Returns**: <code>JSON</code> - A json of the video resolution url and other infomation  
 <a name="VidzitDL+createVideo"></a>
 
-### Example of Return JSON
+#### **Example of Return JSON**
 ```js
 {
   type: "video",

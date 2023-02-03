@@ -1,0 +1,52 @@
+
+name: Publish to NPM & Release
+
+on: 
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version Number
+        default: v1.0.0
+        required: true
+
+jobs:
+#   bump-version:
+#     name: Bump Package Version & Create Tag
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#         with:
+#           token: ${{ secrets.GH_TOKEN }}
+#       - run: git config --global user.name ${{ secrets.GH_USERNAME }}
+#       - run: git config --global user.email ${{ secrets.GH_EMAIL }}
+#       - run: npm version ${{ github.event.inputs.version }} -m "[RELEASE] bump package to ${{ github.event.inputs.version }}"
+#       - run: git push
+
+  Release:
+#     needs: bump-version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Creating release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          automatic_release_tag: "${{ github.event.inputs.version }}"
+
+  Upload:
+    needs: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '15.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies and build 🔧
+        run: npm install
+      - name: Publish package on NPM 📦
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

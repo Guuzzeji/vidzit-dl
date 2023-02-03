@@ -8,16 +8,15 @@
   <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/Guuzzeji/vidzit-dl">
   <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Guuzzeji/vidzit-dl">
   <img alt="GitHub" src="https://img.shields.io/github/license/Guuzzeji/vidzit-dl">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Guuzzeji/vidzit-dl?style=social">
   <img alt="npm" src="https://img.shields.io/npm/dm/vidzit-dl">
   <img alt="node-current" src="https://img.shields.io/node/v/vidzit-dl">
 </p>
 
 <p align="center">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Guuzzeji/vidzit-dl?style=social">
   <a href="https://twitter.com/intent/tweet?url=https://github.com/Guuzzeji/vidzit-dl/&hashtags=reddit,github,nodejs,ffmpeg, programming">
     <img alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FGuuzzeji%2Fvidzit-dl">
   </a>
-
 </p>
 
 A simple Reddit video downloader that allows you to download videos from Reddit using node js. Made using [node-fetch](https://www.npmjs.com/package/node-fetch) and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).

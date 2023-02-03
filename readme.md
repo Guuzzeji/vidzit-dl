@@ -4,8 +4,6 @@
 
 <!-- <h1 align="center">Vidzit-DL</h1> -->
 
-<br>
-
 <p align="center">
   <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/Guuzzeji/vidzit-dl">
   <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Guuzzeji/vidzit-dl">

@@ -5,7 +5,6 @@ async function main() {
     console.log(video1.videoInfo);
     console.log(await video1.createVideo({
         format: '480',
-        setLogging: true,
         setLogger: function (type, message) {
             console.log(type + ": " + message);
         },

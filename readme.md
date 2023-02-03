@@ -40,7 +40,6 @@ async function main() {
     console.log(video1.videoInfo);
     console.log(await video1.createVideo({
         format: '480',
-        setLogging: true,
         setLogger: function (type, message) {
             console.log(type + ": " + message);
         },
@@ -50,7 +49,7 @@ async function main() {
     }));
 }
 
-main()
+main();
 ```
 
 # 📖 API
@@ -167,7 +166,6 @@ Creates a video with the specified format you want. OR can default to max resolu
 | --- | --- | --- |
 | options | <code>Object</code> | JSON that stores all options for this function |
 | options.format | <code>String</code> | The format you want to download (Ex: 480, 720, 1080). Default is max resolution if not specified. |
-| options.setLogging | <code>Boolean</code> | Turn on/off if you want to see ffmpeg logs. Default is fale. |
 | options.setLogger | <code>function</code> | Allows you to process ffmpeg logs with your own function. |
 | options.setProgress | <code>function</code> | Allows you to process ffmpeg progresss with your own function. |
 

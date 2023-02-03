@@ -32,6 +32,14 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           automatic_release_tag: "${{ github.event.inputs.version }}"
+      - name: Create Release Notes
+        uses: action/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.request(`POST /repos/${{github.repository}}/releases/generate-notes`, {
+              tag_name: "${{ github.event.inputs.version }}",
+            })
 
   Upload:
     needs: Release

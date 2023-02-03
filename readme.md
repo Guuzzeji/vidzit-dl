@@ -1,8 +1,10 @@
 <p align="center">
-<img src="./assets/reddit-readme.gif"></img>
+<img src="./assets/Screenshot%202023-02-02%20at%207.08.25%20PM.png"></img>
 </p>
 
-<h1 align="center">Vidzit-DL</h1>
+<!-- <h1 align="center">Vidzit-DL</h1> -->
+
+<br>
 
 A simple Reddit video downloader that allows you to download videos from Reddit using node js. Made using [node-fetch](https://www.npmjs.com/package/node-fetch) and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).
 
